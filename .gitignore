@@ -4,6 +4,6 @@ package-lock.json
 
 package.json
 
-example.txt
+/example.txt
 
-.vscode/
+/.vscode
