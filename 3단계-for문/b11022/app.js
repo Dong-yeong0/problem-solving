@@ -1,12 +1,10 @@
-// 15552 빠른 A+B
-
 const fs = require("fs");
 //const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 const filePath = "./input.txt";
 
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-const valueArray = []
+const valueArray = [];
 for (let i = 1; i <= +input[0]; i++) {
    const tempValue = input[i].split(" ").map((item) => +item);
    valueArray.push({
@@ -17,13 +15,12 @@ for (let i = 1; i <= +input[0]; i++) {
 
 solution(+input[0], valueArray);
 
-function solution(testCase, valueArray) {
+function solution(T, valueArray) {
    let result = "";
-   for (let i = 0; i < testCase; i++) {
+   for (let i = 0; i < T; i++) {
       const A = valueArray[i].A;
       const B = valueArray[i].B;
-      result += A + B + "\n";
+      result += `Case #${i + 1}: ${A} + ${B} = ${A + B} \n`;
    }
    console.log(result);
 }
-// 아 한번에 담아서 출력해야되구나
