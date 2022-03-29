@@ -4,26 +4,11 @@ const filePath = "./input.txt";
 
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-let N = Number(input[0]);
-let values = input[1].split(" ").map(x => Number(x));
-
-let max = values[0];
-let min = values[0];
+let count = Number(input[0]);
+let numbers = input[1].split(' ').map((item) => +item);
 
 
-for (let i = 0; i < N; i++) {
-   if (max < values[i]) {
-      max = values[i];
-   }
+numbers.sort((a, b) => a - b);      // 오름차순 정렬  (down -> up ASC) 이게 좀 신기하네 a-b 가 오름차순이고 b-a가 DESC네
 
-   if (min > values[i]) {
-      min = values[i];
-   }
-}
-
-console.log(`${min} ${max}`);
-/* solution(N);
-
-function solution(N) {
-   console.log(N);
-} */
+// 맨 마지막에는 출력하는게 마지막 index - 1 이니까 
+console.log(`${numbers[0]} ${numbers[count - 1]}`);
