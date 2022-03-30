@@ -2,21 +2,19 @@ const fs = require("fs");
 //const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 const filePath = "./input.txt";
 
-let input = fs.readFileSync(filePath).toString().split("\n");
+let input = fs.readFileSync(filePath).toString().split("\n").map((item) => +item);
 
-solution(+input[0]);
+solution(input);
 
 function solution(input) {
-   let result = 0;
-   let num = input;
-   let sum;
-   while (true) {
-      result++;
-      sum = Math.floor(num / 10) + num % 10;
-      num = (num % 10) * 10 + sum % 10;
-      if (input === num) {
-         break;
+   let count = 0;
+   let max = input[0];
+   for (let i = 0; i < 9; i++) {
+      if (max < input[i]) {
+         max = input[i];
+         count = i;
       }
    }
-   console.log(result);
+   console.log(max);
+   console.log(count + 1);
 }
