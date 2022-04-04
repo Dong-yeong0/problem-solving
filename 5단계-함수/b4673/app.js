@@ -1,24 +1,32 @@
-function d(n) {
-    let number = n;
-    let result = 0;
+function notSelfNumber(N) {
 
-    for (let i = 0; i < String(n).length; i++) {
-        result += number % 10;
-        number = Math.floor(number / 10);
+    let sum = N
+
+    while (true) {
+        if (N == 0) break;
+        sum += N % 10
+        N = parseInt(N / 10)
+
     }
-    return n + result;
+    return sum;
 }
 
-const range = 10000;
+function selfnumber(N) {
+    let selfnum = []
+    let result = []
 
-let selfNumbers = Array(range + 1).fill(true);
+    for (let i = 1; i <= N; i++) {
 
-for (let i = 0; i <= range; i++) {
-    selfNumbers[d(i)] = false;
-}
-
-for (let i = 0; i < range; i++) {
-    if (selfNumbers[i]) {
-        console.log(i);
+        let index = notSelfNumber(i);
+        if (index <= N) {
+            selfnum[index] = true;
+        }
     }
+
+    for (let i = 1; i <= N; i++) {
+        if (!selfnum[i]) result.push(i);
+    }
+    console.log(result.join('\n'));
 }
+
+selfnumber(10000);
