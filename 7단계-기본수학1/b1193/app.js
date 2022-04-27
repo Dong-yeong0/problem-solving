@@ -28,3 +28,4 @@ function solution(input) {
 	console.log(`${child}/${parents});
 
 }
+// 왜 틀린거지
