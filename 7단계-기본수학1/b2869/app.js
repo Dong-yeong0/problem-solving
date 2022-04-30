@@ -10,9 +10,10 @@ function solution(input) {
 	let A = Number(input[0]);
 	let B = Number(input[1]);
 	let V = Number(input[2]);
+
 	let days = 0;
 
-	days = Math.ceil((V - B) / (A - B));
-	
+	days = Math.ceil((V-B) / (A-B));
+
 	console.log(days);
 }
