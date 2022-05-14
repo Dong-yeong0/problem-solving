@@ -13,13 +13,10 @@ function solution(input) {
 		if(values[0] === 0) {
 			break;
 		}
-
-		// Todo 제일 큰 수 -> 빗변
 		values.sort((a,b) => {
 			return a - b;
 		});
-
-		// Todo a^2 + b^2 = c^2
+		
 		if((values[0] * values[0]) + (values[1] * values[1]) === (values[2] * values[2])) {
 			console.log("right");
 		} else {
