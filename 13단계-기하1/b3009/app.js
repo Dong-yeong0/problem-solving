@@ -7,5 +7,5 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 solution(input);
 
 function solution(input) {
-	s
+	
 }
