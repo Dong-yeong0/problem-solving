@@ -21,5 +21,6 @@ function solution(value) {
 			break;
 		}
 	}
+	
 	console.log(result.join("\n"));
 }
