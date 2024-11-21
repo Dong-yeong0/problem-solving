@@ -1,4 +1,4 @@
-def is_end_number(num):
+def is_end_number(num: int):
     return "666" in str(num)
 
 N = int(input())
@@ -11,5 +11,5 @@ while True:
         if count == N:
             print(current_number)
             break
-    
+        
     current_number += 1
