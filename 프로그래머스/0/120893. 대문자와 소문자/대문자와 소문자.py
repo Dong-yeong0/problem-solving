@@ -1,3 +1,4 @@
+"""
 def solution(my_string):
     answer = ""
     for string in my_string:
@@ -6,4 +7,15 @@ def solution(my_string):
         else:
             answer += chr(ord(string) - 32)
 
+    return answer
+"""
+
+def solution(my_string: str) -> str:
+    answer = ""
+    for string in my_string:
+        if string.isupper():
+            answer += string.lower()
+        else:
+            answer += string.upper()
+            
     return answer
