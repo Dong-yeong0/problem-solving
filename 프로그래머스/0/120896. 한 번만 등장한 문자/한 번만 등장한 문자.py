@@ -1,3 +1,4 @@
+"""
 def solution(s):
     s_words = {}
     for char in s:
@@ -12,3 +13,8 @@ def solution(s):
             answer += char
             
     return "".join(sorted(answer))
+"""
+
+def solution(s):
+    answer = "".join(sorted(char for char in s if s.count(char) == 1))
+    return answer
