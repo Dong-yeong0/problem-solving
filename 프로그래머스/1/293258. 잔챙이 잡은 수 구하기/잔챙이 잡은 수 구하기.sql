@@ -3,7 +3,4 @@ SELECT
 FROM
     FISH_INFO
 WHERE
-    (
-        LENGTH <= 10
-        OR LENGTH IS NULL
-    )
+    LENGTH IS NULL
