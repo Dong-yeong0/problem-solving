@@ -1,0 +1,22 @@
+WITH HEAVY_USERS AS (
+    SELECT
+        HOST_ID
+    FROM
+        PLACES
+    GROUP BY
+        HOST_ID
+    HAVING
+        COUNT(HOST_ID) >= 2
+)
+SELECT
+    ID,
+    NAME,
+    HOST_ID
+FROM
+    PLACES
+JOIN
+    HEAVY_USERS
+USING
+    (HOST_ID)
+ORDER BY
+    ID
